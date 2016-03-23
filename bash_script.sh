@@ -1,10 +1,8 @@
 max=5
 for (( i=1; i <= $max; ++i ))
 do
-
 		curl -o result.day$i.log.gz  http://aucfantrain.vn/day04/result.day0$i.log.gz
 		zcat < result.day$i.log.gz >> log_main.log
-
 done
 
 echo "------------------------------------------------"
@@ -32,4 +30,4 @@ echo "------------------------------------------------"
 echo "2.The number of unique user in total"
 echo "------------------------------------------------"
 TOTAL=$(cut -f 3 log_main.log | sort | uniq | wc -l)
-echo "Total : " $TOTAL " users"
+echo "Total = " $TOTAL " users"
